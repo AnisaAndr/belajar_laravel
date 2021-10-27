@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 
@@ -47,4 +47,27 @@ Route::get('biodata2', function(){
     $agama = "Islam";
     $hobi = "Menonton Film";
     return view('biodata', compact('nama', 'jk', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'agama', 'hobi'));
+});*/
+
+Route::get('blog', function(){
+    $data = [
+        ['id' => 1, 'title' => 'Lorem Ipsum 1', 'content' => 'Content Pertama'],
+        ['id' => 2, 'title' => 'Lorem Ipsum 2', 'content' => 'Content kedua'],
+        ['id' => 3, 'title' => 'Lorem Ipsum 3', 'content' => 'Content Ketiga'],
+    ];
+    //dd($data);
+    return view('blog', compact('data'));
 });
+
+/*Route::get('/input/{nama}/{jk}/{tempat_lahir}/{tanggal_lahir}/{alamat}/{agama}/{hobi}', 
+function($nama, $jk, $tempat_lahir, $tanggal_lahir, $alamat, $agama, $hobi){
+    echo "Nama : ".$nama. "<br>";
+    echo "Jenis Kelamin : ".$jk."<br>";
+    echo "Tempat Lahir : ".$tempat_lahir. "<br>";
+    echo "Tanggal Lahir : ".$tanggal_lahir. "<br>";
+    echo "Alamat : ".$alamat. "<br>";
+    echo "Agama : ".$agama. "<br>";
+    echo "Hobi : ".$hobi. "<br>";
+
+
+});*/
