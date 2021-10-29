@@ -49,7 +49,7 @@ Route::get('biodata2', function(){
     return view('biodata', compact('nama', 'jk', 'tempat_lahir', 'tanggal_lahir', 'alamat', 'agama', 'hobi'));
 });*/
 
-Route::get('blog', function(){
+/*Route::get('blog', function(){
     $data = [
         ['id' => 1, 'title' => 'Lorem Ipsum 1', 'content' => 'Content Pertama'],
         ['id' => 2, 'title' => 'Lorem Ipsum 2', 'content' => 'Content kedua'],
@@ -57,7 +57,26 @@ Route::get('blog', function(){
     ];
     //dd($data);
     return view('blog', compact('data'));
+});*/
+
+Route::get('absen', function(){
+    $data1 = [
+        ['Nis' => 19201753228, 'Nama' => 'Alya Nurlia', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'NataEndah'],
+        ['Nis' => 19201753229, 'Nama' => 'Anggi Fitria', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Babakan Cilebak'],
+        ['Nis' => 19201753230, 'Nama' => 'Anisa Andriani', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3','Alamat' => 'Kp. Bojong Cijerah'],
+        ['Nis' => 19201753231, 'Nama' => 'Arif Muhammad Iqbal', 'Jenis Kelamin' => 'Laki-Laki', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Kp. Cibedug Girang'],
+        ['Nis' => 19201753232, 'Nama' => 'Astri Pitriana Mustika', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Kp. Pasawahan'],
+        ['Nis' => 19201753233, 'Nama' => 'Azhar Rizky Aulia', 'Jenis Kelamin' => 'Laki-Laki', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Rancamanyar Regency 2'],
+        ['Nis' => 19201753234, 'Nama' => 'Aziz Tubagus Taufik Hirzi', 'Jenis Kelamin' => 'Laki-Laki', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Sekeawi'],
+        ['Nis' => 19201753235, 'Nama' => 'Bima Putra Rohendi', 'Jenis Kelamin' => 'Laki-Laki', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Rancamanyar'],
+        ['Nis' => 19201753236, 'Nama' => 'Cindy Nurul Azijah', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Bojong Kukun'],
+        ['Nis' => 19201753237, 'Nama' => 'Dinda Dwi Octaviani', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Komplek BMI'],
+    
+    ];
+
+    return view('absen', compact('data1'));
 });
+
 
 /*Route::get('/input/{nama}/{jk}/{tempat_lahir}/{tanggal_lahir}/{alamat}/{agama}/{hobi}', 
 function($nama, $jk, $tempat_lahir, $tanggal_lahir, $alamat, $agama, $hobi){
