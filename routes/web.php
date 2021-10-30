@@ -129,16 +129,14 @@ function($nama="Anisa", $jk="P", $tempat_lahir="Bdg", $tanggal_lahir="22", $alam
     echo "Hobi : ".$hobi. "<br>";
 });*/
 
-Route::get('/data/{nama?}/{mtk?}/{produktif?}/{inggris?}/{indo?}', 
+/*Route::get('/data/{nama?}/{mtk?}/{produktif?}/{inggris?}/{indo?}', 
 function($nama = null, $mtk = 0, $produktif = 0, $inggris = 0, $indo = 0){
     echo "Nama : ". $nama. "<br>";
     echo "Nilai Matematika : ". $mtk. "<br>";
     echo "Nilai Produktif : ". $produktif. "<br>";
     echo "Nilai Bahasa Inggris : ". $inggris. "<br>";
     echo "Nilai Bahasa Indonesia : ". $indo. "<br>";
-
     $rata = ($mtk + $produktif + $inggris + $indo) / 4;
-
     echo "Rata-Rata : ". $rata. "<br>";
     echo "Grade : ";
     if($rata >= 90){
@@ -150,4 +148,28 @@ function($nama = null, $mtk = 0, $produktif = 0, $inggris = 0, $indo = 0){
     } elseif($rata <= 70){
         echo "D";
     }
+});*/
+
+/*Route::get('/pesan/{makan?}/{minum?}/{cemilan?}', 
+function ($makan = null, $minum = null, $cemilan = null) {
+
+    if ($makan && $minum && $cemilan != null) {
+        return "Anda Memesan <br> Makanan : $makan <br>
+                Minuman : $minum <br>
+                Cemilan : $cemilan";
+    } else if ($makan && $minum != null) {
+        return "Anda Memesan <br> Makanan : $makan <br>
+                Minuman : $minum";
+    } else if ($makan || $minum != null) {
+        return $makan != null ? "Anda Memesan <br> Makanan : $makan" : "Anda Memesan Minuman : $minum";
+    } else {
+        return "Anda Tidak Memesan, Silahkan Pulang";
+             }
+
+});*/
+
+//Menampilkan DATA POST
+Route::get('/testmodel', function(){
+    $query = App\Models\Post::all();
+    return $query;
 });
