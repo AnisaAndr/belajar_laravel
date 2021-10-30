@@ -59,7 +59,7 @@ Route::get('biodata2', function(){
     return view('blog', compact('data'));
 });*/
 
-Route::get('absen', function(){
+/*Route::get('absen', function(){
     $data1 = [
         ['Nis' => 19201753228, 'Nama' => 'Alya Nurlia', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'NataEndah'],
         ['Nis' => 19201753229, 'Nama' => 'Anggi Fitria', 'Jenis Kelamin' => 'Perempuan', 'Kelas' => 'XII RPL 3', 'Alamat' => 'Babakan Cilebak'],
@@ -75,18 +75,79 @@ Route::get('absen', function(){
     ];
 
     return view('absen', compact('data1'));
-});
+});*/
 
+/*Route::get('siswa', function(){
+    $siswas = [
+        [
+            'id' => 1,
+            'nama' => 'Anisa Andriani',
+            'username' => 'Anisa',
+            'email' => 'anisa@gmail.com',
+            'alamat' => 'Bandung',
+            'mapel' => [
+                'mapel1' => 'Bahasa Indonesia',
+                'mapel2' => 'Bahasa Inggris',
+                'mapel3' => 'Bahasa Jepang',
+                'mapel4' => 'Bahasa Belanda',
+            ]
+            ],
 
-/*Route::get('/input/{nama}/{jk}/{tempat_lahir}/{tanggal_lahir}/{alamat}/{agama}/{hobi}', 
-function($nama, $jk, $tempat_lahir, $tanggal_lahir, $alamat, $agama, $hobi){
-    echo "Nama : ".$nama. "<br>";
+            [
+                'id' => 2,
+                'nama' => 'Anisa Andriani',
+                'username' => 'Anisa',
+                'email' => 'anisa@gmail.com',
+                'alamat' => 'Bandung',
+                'mapel' => [
+                    'mapel1' => 'Bahasa Indonesia',
+                    'mapel2' => 'Bahasa Inggris',
+                    'mapel3' => 'Bahasa Jepang',
+                    'mapel4' => 'Bahasa Belanda',
+                ]
+                ],
+        ];
+        return view('siswa', compact('siswas'));
+});*/
+
+//Route Parameter
+//optional menyediakan data apabila tidak diisi
+//null boleh kosong
+
+/*Route::get('/input/{nama?}', function($nama="Anisa"){
+    echo "Nama Saya : ". $nama. "<br>";
+});*/
+
+/*Route::get('/input/{nama?}/{jk?}/{tempat_lahir?}/{tanggal_lahir?}/{alamat?}/{agama?}/{hobi?}', 
+function($nama="Anisa", $jk="P", $tempat_lahir="Bdg", $tanggal_lahir="22", $alamat="bojong", $agama="islam", $hobi="masak"){
+    echo "Nama Saya : ".$nama. "<br>";
     echo "Jenis Kelamin : ".$jk."<br>";
     echo "Tempat Lahir : ".$tempat_lahir. "<br>";
     echo "Tanggal Lahir : ".$tanggal_lahir. "<br>";
     echo "Alamat : ".$alamat. "<br>";
     echo "Agama : ".$agama. "<br>";
     echo "Hobi : ".$hobi. "<br>";
-
-
 });*/
+
+Route::get('/data/{nama?}/{mtk?}/{produktif?}/{inggris?}/{indo?}', 
+function($nama = null, $mtk = 0, $produktif = 0, $inggris = 0, $indo = 0){
+    echo "Nama : ". $nama. "<br>";
+    echo "Nilai Matematika : ". $mtk. "<br>";
+    echo "Nilai Produktif : ". $produktif. "<br>";
+    echo "Nilai Bahasa Inggris : ". $inggris. "<br>";
+    echo "Nilai Bahasa Indonesia : ". $indo. "<br>";
+
+    $rata = ($mtk + $produktif + $inggris + $indo) / 4;
+
+    echo "Rata-Rata : ". $rata. "<br>";
+    echo "Grade : ";
+    if($rata >= 90){
+        echo "A";
+    } elseif($rata >= 80){
+        echo "B";
+    } elseif($rata >= 70){
+        echo "C";
+    } elseif($rata <= 70){
+        echo "D";
+    }
+});

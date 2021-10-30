@@ -7,7 +7,7 @@
     <title>Absen</title>
 </head>
 <body>
-<center><h2>Tampilkan Data</h2></center>
+<center><h2>Data Absen Kelas XII RPL 3</h2></center>
     <ul>
         @foreach ($data1 as $data2)
         NIS : {{ $data2['Nis'] }}<br>
