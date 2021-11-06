@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PembelianController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\PembeliController;
+use App\Http\Controllers\SuplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -169,7 +174,47 @@ function ($makan = null, $minum = null, $cemilan = null) {
 });*/
 
 //Menampilkan DATA POST
-Route::get('/testmodel', function(){
+/*Route::get('/testmodel', function(){
     $query = App\Models\Post::all();
     return $query;
+});*/
+
+/*Route::get('test', function(){
+    $query = App\Models\Post::all();
+    return view('test', compact('query'));
 });
+
+Route::get('barang', function(){
+    $barang = App\Models\Barang::all();
+    return view('barang', compact('barang'));
+});
+
+Route::get('pembelian', function(){
+    $pembelian = App\Models\Pembelian::all();
+    return view('pembelian', compact('pembelian'));
+});
+
+Route::get('/pesanan', function(){
+    $pesanan = App\Models\Pesanan::all();
+    return view('pesanan', compact('pesanan'));
+});
+
+Route::get('/pembeli', function(){
+    $pembeli = App\Models\Pembeli::all();
+    return view('pembeli', compact('pembeli'));
+});
+
+Route::get('/suplier', function(){
+    $suplier = App\Models\Suplier::all();
+    return view('suplier', compact('suplier'));
+});*/
+
+Route::get('/barang',[BarangController::class, 'tampilkan']);
+
+Route::get('/pembelian',[PembelianController::class, 'dataPembelian']);
+
+Route::get('/pesanan',[PesananController::class, 'dataPesanan']);
+
+Route::get('/pembeli',[PembeliController::class, 'dataPembeli']);
+
+Route::get('/suplier',[SuplierController::class, 'dataSuplier']);
